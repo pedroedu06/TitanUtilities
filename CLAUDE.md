@@ -64,6 +64,9 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
 - Universal Remote recipe (2026-10-29): Titan Crafter via KubeJS `event.custom` in the pack's
   `titan_final_items.js` (35 items from 10 mods, 200M FE = full machine, 6000 ticks). Docs: final-items.md + JEI-less
   screenshot `assets/recipes/universal_remote_titan_crafter.png`.
+- Iron Man Mask recipe (2026-10-29): PneumaticCraft Pressure Chamber at 5.0 bar via KubeJS `event.custom`
+  (3 red wool, 2 gold blocks, 2 `solarflux:sp_7`, 1 ultimate energy cube, 1 MekaSuit helmet). Chamber danger = 5.0,
+  max 7.0 bar. Docs screenshot: `assets/recipes/iron_man_mask_pressure_chamber.png`.
 - `eternal_dust` (plain item, texture by the user in `textures/item/eternal_dust/`): NO recipe yet, the user will define it.
 - NEXT: the user checks in game whether anything else should move.
 
