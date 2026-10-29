@@ -36,7 +36,33 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
 - Part 1 DONE: mod structure. Part 2 DONE (2026-10-29): Titan Factory, Titan Crafter and Speed Upgrade moved here
   from TitanOres (ids `titanutilities:*`; ingredients/results that are TitanOres items keep `titanores:*`).
   Creative tab "Titan Utilities". Docs site NOT updated yet (user will reorganize it separately).
-- NEXT: Forge Upgrades (Hephaestus Forge), then the final items. Ids change: update the pack's KubeJS scripts/rituals.
+- Part 3 DONE (2026-10-29): Forge Upgrades moved here (TitanOres 1.0.4). `item/ForgeUpgradeItem`
+  (`forge_upgrade_tier_2..5`, 5 = "X"): right-click a `forbidden_arcanus:hephaestus_forge` to raise its NBT `Level` by
+  one (Forbidden & Arcanus 16.2.x can't upgrade it in survival; no compile dependency). Made by Hephaestus Forge
+  rituals in the pack (`kubejs/data/titanmodpack/hephaestus_forge/rituals/forge_upgrade_tier_N.json`; the 1.16 forge
+  has ONLY 6 pedestals, inputs are single items, essences must fit the tier caps). Textures `textures/item/forge_upgrade/`.
+- Part 4 DONE (2026-10-29): final items + Blue Soil moved here (TitanOres 1.0.5). Pack updated: `titan_final_items.js`
+  (Sponge Bob) and the 3 Source Crystal rituals give `titanutilities:*`; Titan Crafter disc recipe result too.
+  Blue Soil (`ModBlocks.BLUE_SOIL`, cube_bottom_top, shovel, no recipe yet): TitanOres essence crops check the block
+  tag `titanores:essence_crop_soil`, which this mod fills in `data/titanores/tags/blocks/essence_crop_soil.json`
+  (TitanOres can't depend on this mod).
+- Final items (10, moved here 2026-10-29 with TitanOres 1.0.5; textures `textures/item/finalitens/`): endgame components for the modpack. RECIPE RULE (user): recipes using only
+  vanilla + Titan items go IN THE MOD (JSON); KubeJS in the modpack only for recipes needing other mods' items. All final items follow the Source Crystal style (epic rarity, no glow,
+  no tooltip, no code comments). Modpack recipes that need other mods live in the PACK repo:
+  `C:/Users/Pedro/curseforge/minecraft/Instances/TitanMods/kubejs/server_scripts/titan_final_items.js`
+  (Sponge Bob = Create mechanical crafting 7x8). Recipe types without a KubeJS helper go as JSON in the pack's
+  `kubejs/data/titanmodpack/...` (datapack): Source Crystal = Forbidden & Arcanus Hephaestus Forge rituals
+  (`hephaestus_forge/rituals/source_crystal_<fire|ice|lightning>_heart.json`; FA 1.16 forge has ONLY 6 PEDESTALS (max 6 inputs, slots 0-5); inputs are single items, no tags, and
+  position-independent; essences 600 aureal / 8 souls / 20000 blood / 350 XP = needs forge tier 3+). Docs site not updated yet. Done so far: `source_crystal`, `sponge_bob` (made with Create in the modpack),
+  `ancestral_seed`, `world_core`. `raid_king` (crown): `item/RaidKingItem` (HEAD equipment slot, no armor, NBT `HeroLevel`) +
+  `event/RaidKingEvents`: drops where the last raider dies once a raid with `getBadOmenLevel() >= getMaxBadOmenLevel()`
+  turns `isVictory()` (pending map per world, checked on WorldTick); worn on head or Curios `head` slot (`compat/CuriosCompat` sends the HEAD IMC; tag `data/curios/tags/items/head.json`) -> Hero of the
+  Village amplifier HeroLevel-1 renewed every 20 ticks. NOTE: in LivingDeathEvent the raider already left its raid
+  (die() calls removeFromRaid first), so the raid is found with `getRaidAt(pos)`. Tested OK in game.
+  Plain final items added 2026-10-15: `antenna`, `calculator`, `iron_man_mask`, `music_disc_titanium`, `universal_remote`
+  (10 of 10 — all final items exist; only recipes remain).
+- `ethernal_dust` (plain item, texture by the user in `textures/item/ethernal_dust/`): NO recipe yet, the user will define it.
+- NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):
 - Titan Factory (name will change): 100M FE buffer (`energy/ModEnergyStorage`, receive-only, all sides), gradual
@@ -52,7 +78,7 @@ Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots
   factory, no upgrades. Recipe type `titanutilities:titan_crafting` = FIXED 9x7 pattern (7 rows x 9 chars, space = empty,
   no offset/mirror). Top input is "template" style (`TitanCrafterItemHandlers.TopInput`: only tops up slots already
   holding the item); bottom = output. GUI `textures/gui/titan_crafter_gui.png` (240x240). Made in the factory:
-  2 crafting tables + 2 iron blocks + 2 `forge:gears/iron`, 80M FE, 240 s.
+  2 crafting tables + 2 enderium blocks (`forge:storage_blocks/enderium`, Thermal) + 2 `forge:gears/iron`, 80M FE, 240 s.
   TODO: switch those gears to `forge:gears/diamond` (available in the pack via Thermal Foundation / Industrial Foregoing); final recipes wait for the
   modpack mod list + special items. Crafter tested OK. Recipes: Titanium Music Disc (36 titanium ingots in a
   diamond shape + `#minecraft:music_discs` in the center, 36M FE, 60 s).

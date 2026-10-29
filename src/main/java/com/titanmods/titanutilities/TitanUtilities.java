@@ -2,6 +2,7 @@ package com.titanmods.titanutilities;
 
 import com.titanmods.titanutilities.client.TitanCrafterScreen;
 import com.titanmods.titanutilities.client.TitanFactoryScreen;
+import com.titanmods.titanutilities.compat.CuriosCompat;
 import com.titanmods.titanutilities.init.ModBlocks;
 import com.titanmods.titanutilities.init.ModContainers;
 import com.titanmods.titanutilities.init.ModItems;
@@ -10,9 +11,11 @@ import com.titanmods.titanutilities.init.ModTileEntities;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,6 +37,7 @@ public class TitanUtilities {
         ModRecipes.SERIALIZERS.register(modEventBus);
 
         modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::enqueueImc);
         modEventBus.addListener(this::clientSetup);
 
         // Forge event bus: in-game events.
@@ -42,6 +46,13 @@ public class TitanUtilities {
 
     private void setup(final FMLCommonSetupEvent event) {
         LOGGER.info("Titan Utilities common setup");
+    }
+
+    // Messages to other mods. Curios is optional, so only talk to it when it is installed.
+    private void enqueueImc(final InterModEnqueueEvent event) {
+        if (ModList.get().isLoaded(CuriosCompat.MOD_ID)) {
+            CuriosCompat.sendImc();
+        }
     }
 
     // Client only (rendering, key bindings, screens).
