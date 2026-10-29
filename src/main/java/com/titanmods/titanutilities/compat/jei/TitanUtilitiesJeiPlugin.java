@@ -11,6 +11,7 @@ import com.titanmods.titanutilities.init.ModItems;
 import com.titanmods.titanutilities.init.ModRecipes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.handlers.IGuiContainerHandler;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
@@ -48,6 +49,10 @@ public class TitanUtilitiesJeiPlugin implements IModPlugin {
         RecipeManager recipes = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
         registration.addRecipes(recipes.getAllRecipesFor(ModRecipes.TITAN_FACTORY_TYPE), TitanFactoryCategory.UID);
         registration.addRecipes(recipes.getAllRecipesFor(ModRecipes.TITAN_CRAFTING_TYPE), TitanCrafterCategory.UID);
+
+        // The Raid King crown has no recipe: an "Information" page explains how to get it.
+        registration.addIngredientInfo(new ItemStack(ModItems.RAID_KING.get()), VanillaTypes.ITEM,
+                "jei.titanutilities.raid_king.info.1", "jei.titanutilities.raid_king.info.2", "jei.titanutilities.raid_king.info.3");
     }
 
     @Override

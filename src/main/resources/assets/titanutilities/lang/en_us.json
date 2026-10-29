@@ -31,5 +31,8 @@
   "item.titanutilities.music_disc_titanium": "Titanium Music Disc",
   "item.titanutilities.universal_remote": "Universal Remote",
   "block.titanutilities.blue_soil": "Blue Soil",
-  "item.titanutilities.eternal_dust": "Eternal Dust"
+  "item.titanutilities.eternal_dust": "Eternal Dust",
+  "jei.titanutilities.raid_king.info.1": "Dropped where the last raider dies when you win a raid at the maximum Bad Omen level (Bad Omen V on Normal/Hard, III on Easy).",
+  "jei.titanutilities.raid_king.info.2": "Wear it on your head (helmet slot or the Curios head slot) for endless Hero of the Village. Its level is the raid's Bad Omen level.",
+  "jei.titanutilities.raid_king.info.3": "No armor value."
 }

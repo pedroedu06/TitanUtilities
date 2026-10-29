@@ -43,7 +43,7 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
   has ONLY 6 pedestals, inputs are single items, essences must fit the tier caps). Textures `textures/item/forge_upgrade/`.
 - Part 4 DONE (2026-10-29): final items + Blue Soil moved here (TitanOres 1.0.5). Pack updated: `titan_final_items.js`
   (Sponge Bob) and the 3 Source Crystal rituals give `titanutilities:*`; Titan Crafter disc recipe result too.
-  Blue Soil (`ModBlocks.BLUE_SOIL`, cube_bottom_top, shovel, no recipe yet): TitanOres essence crops check the block
+  Blue Soil (`ModBlocks.BLUE_SOIL`, cube_bottom_top, shovel; recipe in the pack KubeJS: Mystical Agriculture Infusion Altar, grass block + 4 `mysticalagradditions:insanium_block` + 4 eternal dust): TitanOres essence crops check the block
   tag `titanores:essence_crop_soil`, which this mod fills in `data/titanores/tags/blocks/essence_crop_soil.json`
   (TitanOres can't depend on this mod).
 - Final items (10, moved here 2026-10-29 with TitanOres 1.0.5; textures `textures/item/finalitens/`): endgame components for the modpack. RECIPE RULE (user): recipes using only
@@ -67,7 +67,12 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
 - Iron Man Mask recipe (2026-10-29): PneumaticCraft Pressure Chamber at 5.0 bar via KubeJS `event.custom`
   (3 red wool, 2 gold blocks, 2 `solarflux:sp_7`, 1 ultimate energy cube, 1 MekaSuit helmet). Chamber danger = 5.0,
   max 7.0 bar. Docs screenshot: `assets/recipes/iron_man_mask_pressure_chamber.png`.
-- `eternal_dust` (plain item, texture by the user in `textures/item/eternal_dust/`): NO recipe yet, the user will define it.
+- `eternal_dust` (plain item, texture by the user in `textures/item/eternal_dust/`): recipe in the pack KubeJS (2x2 shaped: fire/water over air/earth Mystical Agriculture agglomeratios). Docs: farming.md. DOCS RULE (user): everything Mystical Agriculture / farming related goes on the Farming page.
+- Pack KubeJS scripts: `titan_final_items.js` (final items: Sponge Bob, Universal Remote, Iron Man Mask, Ancestral
+  Seed) and `titan_farming.js` (Eternal Dust, Blue Soil, TitanOres seeds on the Infusion Altar = prosperity seed base +
+  4 insanium blocks + 4 ore blocks, Botany Pots soil category `titan_blue_soil` + crops 2400 ticks, 75% essence / 5%
+  seed). Ancestral Seed = emberite seed + 4 emberium blocks + 4 insanium blocks (Infusion Altar).
+  PneumaticCraft caches its recipes for JEI: after changing PNC recipes, rejoin the world instead of `/reload`.
 - NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):
