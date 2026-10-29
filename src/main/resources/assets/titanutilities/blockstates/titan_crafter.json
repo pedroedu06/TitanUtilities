@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "titanutilities:block/titan_crafter"
+    },
+    "facing=east": {
+      "model": "titanutilities:block/titan_crafter",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "titanutilities:block/titan_crafter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "titanutilities:block/titan_crafter",
+      "y": 270
+    }
+  }
+}

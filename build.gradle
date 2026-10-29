@@ -117,6 +117,16 @@ repositories {
         name = 'JEI'
         url = 'https://dvs1.progwml6.com/files/maven/'
     }
+    maven {
+        name = 'Mekanism'
+        url = 'https://modmaven.dev/'
+    }
+    // CurseForge files (Thermal Foundation + CoFH Core, Industrial Foregoing + Titanium): curse.maven:<slug>-<projectId>:<fileId>
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
     // TitanOres (required dependency): uses the jar built in the sibling project. Run its `build` first.
     flatDir {
         dirs '../TitanOres/build/libs'
@@ -144,8 +154,20 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
 
-    // Test-only mods (not dependencies of TitanOres): energy sources/cables to test the Titan Factory.
+    // TitanOres (required dependency).
     implementation fg.deobf("blank:titanores:${titanores_version}")
+
+    // Test-only: Thermal Foundation (+ CoFH Core) provides the iron gear (forge:gears/iron) and the machine frame
+    // (titanutilities:machine_blocks) used by the machine recipes.
+    runtimeOnly fg.deobf("curse.maven:thermal-foundation-222880:${thermal_foundation_file_id}")
+    runtimeOnly fg.deobf("curse.maven:cofh-core-69162:${cofh_core_file_id}")
+    // Test-only: Mekanism provides the steel casing (titanutilities:machine_blocks) and the creative energy cube
+    // to power the machines.
+    runtimeOnly fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
+    // Test-only: Industrial Foregoing (+ Titanium library) provides iron/diamond gears and the machine frame (pity)
+    // for titanutilities:machine_blocks, same as in the modpack.
+    runtimeOnly fg.deobf("curse.maven:industrial-foregoing-266515:${industrial_foregoing_file_id}")
+    runtimeOnly fg.deobf("curse.maven:titanium-287342:${titanium_file_id}")
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency

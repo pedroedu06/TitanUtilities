@@ -1,2 +1,17 @@
 {
+  "block.titanutilities.titan_factory": "Fábrica Titan",
+  "container.titanutilities.titan_factory": "Fábrica Titan",
+  "tooltip.titanutilities.energy": "%s / %s FE",
+  "tooltip.titanutilities.progress": "Progresso: %s%%",
+  "item.titanutilities.speed_upgrade": "Upgrade de Velocidade",
+  "tooltip.titanutilities.speed_upgrades": "Upgrades de velocidade: %s/%s (velocidade x%s)",
+  "jei.titanutilities.titan_factory": "Titan Factory",
+  "jei.titanutilities.titan_factory.info": "%s FE · %ss",
+  "jei.titanutilities.titan_factory.energy": "Energia necessária: %s FE",
+  "jei.titanutilities.titan_factory.time": "Tempo: %ss (%s FE/t)",
+  "jei.titanutilities.titan_factory.mirrored": "As duas colunas podem ser trocadas",
+  "block.titanutilities.titan_crafter": "Titan Crafter",
+  "container.titanutilities.titan_crafter": "Titan Crafter",
+  "jei.titanutilities.titan_crafter": "Titan Crafter",
+  "itemGroup.titanutilities": "Titan Utilities"
 }
