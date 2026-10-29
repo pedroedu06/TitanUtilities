@@ -61,7 +61,10 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
   (die() calls removeFromRaid first), so the raid is found with `getRaidAt(pos)`. Tested OK in game.
   Plain final items added 2026-10-15: `antenna`, `calculator`, `iron_man_mask`, `music_disc_titanium`, `universal_remote`
   (10 of 10 — all final items exist; only recipes remain).
-- `ethernal_dust` (plain item, texture by the user in `textures/item/ethernal_dust/`): NO recipe yet, the user will define it.
+- Universal Remote recipe (2026-10-29): Titan Crafter via KubeJS `event.custom` in the pack's
+  `titan_final_items.js` (35 items from 10 mods, 200M FE = full machine, 6000 ticks). Docs: final-items.md + JEI-less
+  screenshot `assets/recipes/universal_remote_titan_crafter.png`.
+- `eternal_dust` (plain item, texture by the user in `textures/item/eternal_dust/`): NO recipe yet, the user will define it.
 - NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):

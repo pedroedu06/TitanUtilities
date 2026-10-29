@@ -21,7 +21,7 @@ public class ModItems {
     // Titan Factory upgrade: each one installed doubles the machine speed (see TitanFactoryTileEntity).
     public static final RegistryObject<Item> SPEED_UPGRADE = ITEMS.register("speed_upgrade", () -> new Item(props()));
 
-    public static final RegistryObject<Item> ETHERNAL_DUST = ITEMS.register("ethernal_dust", () -> new Item(props()));
+    public static final RegistryObject<Item> ETERNAL_DUST = ITEMS.register("eternal_dust", () -> new Item(props()));
 
     // Hephaestus Forge (Forbidden & Arcanus) tier upgrades, made by rituals in the modpack.
     public static final RegistryObject<Item> FORGE_UPGRADE_TIER_2 = ITEMS.register("forge_upgrade_tier_2",

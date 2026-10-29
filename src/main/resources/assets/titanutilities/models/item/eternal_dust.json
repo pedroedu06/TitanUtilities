@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "titanutilities:item/ethernal_dust/ethernal_dust"
+    "layer0": "titanutilities:item/eternal_dust/eternal_dust"
   }
 }
