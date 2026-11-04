@@ -51,8 +51,7 @@ public class TitanUtilitiesJeiPlugin implements IModPlugin {
         registration.addRecipes(recipes.getAllRecipesFor(ModRecipes.TITAN_CRAFTING_TYPE), TitanCrafterCategory.UID);
 
         // The Raid King crown has no recipe: an "Information" page explains how to get it.
-        registration.addIngredientInfo(new ItemStack(ModItems.RAID_KING.get()), VanillaTypes.ITEM,
-                "jei.titanutilities.raid_king.info.1", "jei.titanutilities.raid_king.info.2", "jei.titanutilities.raid_king.info.3");
+        registration.addIngredientInfo(new ItemStack(ModItems.RAID_KING.get()), VanillaTypes.ITEM, "jei.titanutilities.raid_king.info");
     }
 
     @Override

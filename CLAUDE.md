@@ -73,6 +73,9 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
   4 insanium blocks + 4 ore blocks, Botany Pots soil category `titan_blue_soil` + crops 2400 ticks, 75% essence / 5%
   seed). Ancestral Seed = emberite seed + 4 emberium blocks + 4 insanium blocks (Infusion Altar).
   PneumaticCraft caches its recipes for JEI: after changing PNC recipes, rejoin the world instead of `/reload`.
+- Calculator recipe: crafting table via pack KubeJS (`titan_final_items.js`). World Core recipe: vanilla items only, so
+  JSON in this mod (`recipes/world_core.json`). NEVER copy a jar to the pack while the game is open (`javaw.exe`): the
+  mod's data pack goes missing and all its recipes vanish on the next reload.
 - NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):
