@@ -3,6 +3,7 @@ package com.titanmods.titanutilities.init;
 import com.titanmods.titanutilities.TitanUtilities;
 import com.titanmods.titanutilities.item.ForgeUpgradeItem;
 import com.titanmods.titanutilities.item.RaidKingItem;
+import com.titanmods.titanutilities.item.TitanStarItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -56,6 +57,8 @@ public class ModItems {
             () -> new Item(props().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> UNIVERSAL_REMOTE = ITEMS.register("universal_remote",
             () -> new Item(props().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> TITAN_STAR = ITEMS.register("titan_star",
+            () -> new TitanStarItem(props().rarity(Rarity.EPIC)));
 
     private static Item.Properties props() {
         return new Item.Properties().tab(ModItemGroup.TITAN_UTILITIES).fireResistant();

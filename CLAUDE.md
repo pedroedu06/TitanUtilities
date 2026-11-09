@@ -76,6 +76,9 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
 - Calculator recipe: crafting table via pack KubeJS (`titan_final_items.js`). World Core recipe: vanilla items only, so
   JSON in this mod (`recipes/world_core.json`). NEVER copy a jar to the pack while the game is open (`javaw.exe`): the
   mod's data pack goes missing and all its recipes vanish on the next reload.
+- `titan_star` (2026-11-09): 11th final item (`item/TitanStarItem`): always has the enchantment glint (`isFoil`) and an
+  animated rainbow name (`getName` colors each letter by hue + time; falls back to the plain name when the translation
+  is not loaded, e.g. dedicated server). Texture `finalitens/titan_star.png`. NO recipe yet (user decides later).
 - NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):
