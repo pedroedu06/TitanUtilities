@@ -1,5 +1,6 @@
 package com.titanmods.titanutilities.recipe;
 
+import net.minecraftforge.common.crafting.CraftingHelper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -140,7 +141,7 @@ public class TitanCrafterRecipe implements IRecipe<IInventory> {
             }
             int energy = JSONUtils.getAsInt(json, "energy");
             int time = Math.max(1, JSONUtils.getAsInt(json, "time", 200));
-            ItemStack result = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(json, "result"));
+            ItemStack result = CraftingHelper.getItemStack(JSONUtils.getAsJsonObject(json, "result"), true);
             return new TitanCrafterRecipe(id, grid, energy, time, result);
         }
 

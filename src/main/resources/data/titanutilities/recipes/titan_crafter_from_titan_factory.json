@@ -8,7 +8,7 @@
       "tag": "forge:storage_blocks/enderium"
     },
     {
-      "tag": "forge:gears/iron"
+      "tag": "forge:gears/diamond"
     }
   ],
   "right": [
@@ -19,7 +19,7 @@
       "tag": "forge:storage_blocks/enderium"
     },
     {
-      "tag": "forge:gears/iron"
+      "tag": "forge:gears/diamond"
     }
   ],
   "mirrored": true,

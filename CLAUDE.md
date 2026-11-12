@@ -78,7 +78,10 @@ Utilities and final items for the **TitanMods** modpack. Author: Pedro (beginner
   mod's data pack goes missing and all its recipes vanish on the next reload.
 - `titan_star` (2026-11-09): 11th final item (`item/TitanStarItem`): always has the enchantment glint (`isFoil`) and an
   animated rainbow name (`getName` colors each letter by hue + time; falls back to the plain name when the translation
-  is not loaded, e.g. dedicated server). Texture `finalitens/titan_star.png`. NO recipe yet (user decides later).
+  is not loaded, e.g. dedicated server). Texture `finalitens/titan_star.png`. Recipe (2026-11-09): Create mechanical crafting 9x9 cross in the pack's
+  `titan_final_items.js` (all 10 final items + 3 Titanium Stars + 12 emberium blocks + 12
+  `allthecompressed:nether_star_block_1x`). Create 1.16 caps mechanical recipes at 9x9 (`setCraftingSize(9, 9)`).
+  Docs page `titan-star.md` (cover screenshot, own nav tab).
 - NEXT: the user checks in game whether anything else should move.
 
 Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots still come from TitanOres):
@@ -95,9 +98,8 @@ Machine details (moved from TitanOres' CLAUDE.md; recipe ingredients like ingots
   factory, no upgrades. Recipe type `titanutilities:titan_crafting` = FIXED 9x7 pattern (7 rows x 9 chars, space = empty,
   no offset/mirror). Top input is "template" style (`TitanCrafterItemHandlers.TopInput`: only tops up slots already
   holding the item); bottom = output. GUI `textures/gui/titan_crafter_gui.png` (240x240). Made in the factory:
-  2 crafting tables + 2 enderium blocks (`forge:storage_blocks/enderium`, Thermal) + 2 `forge:gears/iron`, 80M FE, 240 s.
-  TODO: switch those gears to `forge:gears/diamond` (available in the pack via Thermal Foundation / Industrial Foregoing); final recipes wait for the
-  modpack mod list + special items. Crafter tested OK. Recipes: Titanium Music Disc (36 titanium ingots in a
+  2 crafting tables + 2 enderium blocks (`forge:storage_blocks/enderium`, Thermal) + 2 `forge:gears/diamond`
+  (switched from iron 2026-11-12; Thermal gears are the pack standard), 80M FE, 240 s. Crafter tested OK. Recipes: Titanium Music Disc (36 titanium ingots in a
   diamond shape + `#minecraft:music_discs` in the center, 36M FE, 60 s).
 - JEI: `compat/jei/` (`@JeiPlugin`, only loaded by JEI): Titan Factory category using the machine GUI crop, looping
   animation (progress fills, energy bar statically shows only the recipe energy), click areas on the GUI arrows,
